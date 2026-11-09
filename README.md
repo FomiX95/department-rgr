@@ -4,20 +4,24 @@
 Дерево: **Предмет** (корінь) → **Викладачі** (1 рівень) → **Студенти** (2 рівень).
 
 ## Стек
-Java 17, Spring Boot 3, Spring Data JPA, Spring Security, PostgreSQL 16 (Docker), Lombok.
+Java 17, Spring Boot 3, Spring Data JPA, Spring Security, PostgreSQL (Docker), Lombok.
 
 ## Запуск
-1. Створити `.env` з `.env.example` (`DB_LOGIN`, `DB_PASSWORD`).
-2. Запустити БД: `docker compose up -d`
-   (при першому старті виконується `docker/init.sql` — схема + початкові дані).
-3. Задати змінні середовища для застосунку та запустити:
-   ```
-   export DB_LOGIN=postgres
-   export DB_PASSWORD=change_me
+1. Скопіюйте файл `.env.example` в `.env` та вкажіть значення для `DB_LOGIN` и `DB_PASSWORD`.
+2. Запустіть базу даних: `docker compose up -d` (порт 5433).
+3. Вкажіть змінні середовища та запустіть додаток.
+
+   Windows (cmd):
+   set DB_LOGIN=postgres
+   set DB_PASSWORD=ваш_пароль
    mvn spring-boot:run
-   ```
-   (Windows PowerShell: `$env:DB_LOGIN="postgres"; $env:DB_PASSWORD="change_me"`)
-4. Відкрити http://localhost:8080
+
+   Linux/macOS:
+   export DB_LOGIN=postgres
+   export DB_PASSWORD=ваш_пароль
+   mvn spring-boot:run
+
+4. Відкрити http://localhost:8080 .
 
 ## Користувачі
 | логін | пароль | роль |
