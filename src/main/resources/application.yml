@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: department
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/department}
+    username: ${DB_LOGIN}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+logging:
+  level:
+    com.example.department: INFO

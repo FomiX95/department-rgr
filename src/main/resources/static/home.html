@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Головна</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="nav"></header>
+  <main class="wrap">
+    <div class="card">
+      <h1>Головна</h1>
+      <div class="sub">Оберіть розділ</div>
+      <div class="tiles">
+        <a class="tile" href="/subjects.html"><b>Предмети</b><span id="c1">&nbsp;</span></a>
+        <a class="tile" href="/teachers.html"><b>Викладачі</b><span id="c2">&nbsp;</span></a>
+        <a class="tile" href="/students.html"><b>Студенти</b><span id="c3">&nbsp;</span></a>
+        <a class="tile" href="/app.html"><b>Дерево</b><span>Предмет → викладач → студент</span></a>
+      </div>
+    </div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script>
+    (async () => {
+      renderNav(await getMe(), 'home.html');
+      const [a, b, c] = await Promise.all([api('/api/subjects'), api('/api/teachers'), api('/api/students')]);
+      document.getElementById('c1').textContent = 'Записів: ' + a.length;
+      document.getElementById('c2').textContent = 'Записів: ' + b.length;
+      document.getElementById('c3').textContent = 'Записів: ' + c.length;
+    })();
+  </script>
+</body>
+</html>

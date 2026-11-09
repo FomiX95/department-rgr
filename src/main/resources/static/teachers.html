@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Викладачі</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header id="nav"></header>
+  <main class="wrap">
+    <div class="card">
+      <div class="bar">
+        <div><h1 id="title"></h1><div class="sub" id="count"></div></div>
+        <div id="actions"></div>
+      </div>
+      <input id="q" placeholder="Пошук за ID або текстом..." style="margin-top:18px">
+      <div id="tableBox"></div>
+    </div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/crud.js"></script>
+  <script>initList('teachers', 'teachers.html');</script>
+</body>
+</html>

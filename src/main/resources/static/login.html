@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вхід</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="wrap narrow">
+    <div class="card">
+      <h1>Вхід</h1>
+      <p id="err" class="err" hidden>Невірний логін або пароль</p>
+      <form method="post" action="/login">
+        <label>Логін</label><input name="username" required autofocus>
+        <label>Пароль</label><input name="password" type="password" required>
+        <div class="row"><button class="btn" type="submit">Увійти</button>
+        <a class="btn light" href="/">На головну</a></div>
+      </form>
+    </div>
+  </main>
+  <script>if (location.search.includes('error')) document.getElementById('err').hidden = false;</script>
+</body>
+</html>
